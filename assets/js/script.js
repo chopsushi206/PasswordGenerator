@@ -1,8 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var passLength;
 
-
-//Password Attribute Variables: LCase, UCase, Num, Special, & Length
+//Password Attribute Variables: LCase, UCase, Num, Special Chars
 
 function randomLower () {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97); 
@@ -19,6 +19,25 @@ function randomNumber () {
 function specialChars () {
   var special = "!@#$%^&*()-_:;./?~`'";
   return special[Math.floor(Math.random() * special.length)]; 
+};
+
+// Function to retrieve Password length
+
+function chooseLength () {
+  passLength = prompt ("How long would you like your password? Choose between 8-128")
+
+  if (passLength<8) {
+    alert("Please choose a number between 8-128");
+    chooseLength();
+  } else if (passLength>128) {
+    alert("Please choose a number between 8-128");
+    chooseLength();
+  } else if (isNaN(passLength)) {
+    alert("Please choose a number between 8-128");
+    chooseLength();
+  } else {
+    return passLength;
+  }
 };
 
 
