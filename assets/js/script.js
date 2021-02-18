@@ -40,6 +40,84 @@ function chooseLength () {
   }
 };
 
+// Function to include or exclude Lower Case Letters in Password
+
+function chooseLowerCase() {
+  lowercasePrompt = prompt("Do you want to include LowerCase letters in your password? \n(Yes or No)");
+  lowercasePrompt = lowercasePrompt.toLowerCase();
+
+  if (lowercasePrompt === null || lowercasePrompt === "") {
+    alert("Please answer Yes or No");
+    chooseLowerCase();
+
+  } else if (lowercasePrompt === "yes" || lowercasePrompt === "y") {
+    lowercasePrompt = true;
+    return lowercasePrompt;
+
+  } else if (lowercasePrompt === "no" || lowercasePrompt === "n") {
+    lowercasePrompt = false;
+    return lowercasePrompt;
+
+  } else {
+    alert("Please answer Yes or No");
+    chooseLowerCase();
+  }
+  return lowercasePrompt;
+};
+
+var lower = chooseLowerCase();
+
+// Function to include or exclude Upper Case Letters in Password
+
+function chooseUpperCase() {
+  uppercasePrompt = prompt("Do you want to include uppercase letters in your password? \n(Yes or No)");
+  uppercasePrompt = uppercasePrompt.toLowerCase();
+
+  if (uppercasePrompt === null || uppercasePrompt === "") {
+    alert("Please answer Yes or No");
+    chooseUpperCase();
+
+  } else if (uppercasePrompt === "yes" || uppercasePrompt === "y") {
+    uppercasePrompt = true;
+    return uppercasePrompt;
+
+  } else if (uppercasePrompt === "no" || uppercasePrompt === "n") {
+    uppercasePrompt = false;
+    return uppercasePrompt;
+
+  } else {
+    alert("Please answer Yes or No");
+    chooseUpperCase();
+  }
+  return uppercasePrompt;
+};
+
+var upper = chooseUpperCase();
+
+// Function to include Numbers in the password
+
+function chooseNumber() {
+  numberPrompt = prompt("Do you want to include numbers in your password? \n(Yes or No)");
+  numberPrompt = numberPrompt.toLowerCase();
+
+  if (numberPrompt === null || numberPrompt === "") {
+    alert("Please answer Yes or No");
+    chooseNumber();
+
+  } else if (numberPrompt === "yes" || numberPrompt === "y") {
+    numberPrompt = true;
+    return numberPrompt;
+
+  } else if (numberPrompt === "no" || numberPrompt === "n") {
+    numberPrompt = false;
+    return numberPrompt;
+
+  } else {
+    alert("Please answer Yes or No");
+    chooseNumber();
+  }
+  return numberPrompt;
+};
 
 // Write password to the #password input
 function writePassword() {
