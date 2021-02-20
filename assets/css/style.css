@@ -21,14 +21,17 @@ body {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
-  display:flex;
-  justify-content: center;
-  flex-wrap: wrap;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header {
   text-align: center;
-  width: 100%;
+  padding: 20px;
   padding-top: 0px;
   color: #004E7C;
 }
@@ -40,9 +43,13 @@ header {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
   font-size: 18px;
-  margin: auto auto;
+  margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+}
+
+.card-header {
+  text-align: center;
 }
 
 .card-header::after {
@@ -51,6 +58,7 @@ header {
   width: 100%;
   background: #e7e9eb;
   height: 2px;
+  margin-bottom: 10px;
 }
 
 .card-body {
@@ -61,19 +69,6 @@ header {
   text-align: center;
 }
 
-.card-footer::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
-.card-footer::after {
-  content: " ";
-  display: block;
-  clear: both;
-}
 
 .btn {
   border: none;
@@ -126,7 +121,6 @@ button[disabled] {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
-    border: 0px;
   }
 
   #password {
@@ -137,5 +131,29 @@ button[disabled] {
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 440px){
+  .options{
+    justify-content: center;
+    flex-wrap:wrap;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 440px){
+  h1 {
+    font-size:20px;
+  }
+
+  h2 {
+    font-size:15px;
+  }
+
+  .options{
+    justify-content: flex-start;
+    flex-wrap:wrap;
+    font-size: 12px;
   }
 }

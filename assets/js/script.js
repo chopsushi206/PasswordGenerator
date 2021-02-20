@@ -3,7 +3,6 @@
 const resultElement = document.getElementById('password');
 const lengthElement = document.getElementById('length');
 const upperElement = document.getElementById('upper');
-const lowerElement = document.getElementById('lower');
 const numberElement = document.getElementById('number');
 const symbolElement = document.getElementById('symbol');
 const generateBtn = document.getElementById('generate');
@@ -45,7 +44,7 @@ function inputChange(input) {
 // Event Listener to grab following elements when button is clicked, also sets result of generate password function to textbox
 generateBtn.addEventListener('click', () => {
   const length = +lengthElement.value;
-  const hasLower = lowerElement.checked;
+  const hasLower = true;
   const hasUpper = upperElement.checked;
   const hasNumber = numberElement.checked;
   const hasSymbol = symbolElement.checked;
@@ -58,11 +57,6 @@ function generatePassword(lower, upper, number, symbol, length) {
   let generatedPassword = '';
   const typesCount = lower + upper + number + symbol;
   const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0]);
-
-  // Doesn't have a selected type
-  if (typesCount === 0) {
-    return '';
-  }
 
   // creates a loop
   for (let i = 0; i < length; i += typesCount) {
