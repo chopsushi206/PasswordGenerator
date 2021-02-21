@@ -44,17 +44,17 @@ function inputChange(input) {
 // Event Listener to grab following elements when button is clicked, also sets result of generate password function to textbox
 generateBtn.addEventListener('click', () => {
   const length = +lengthElement.value;
-  const hasLower = true;
-  const hasUpper = upperElement.checked;
-  const hasNumber = numberElement.checked;
-  const hasSymbol = symbolElement.checked;
+  const includeLower = true;
+  const includeUpper = upperElement.checked;
+  const includeNumber = numberElement.checked;
+  const includeSymbol = symbolElement.checked;
 
-  resultElement.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+  resultElement.innerText = generatePassword(includeLower, includeUpper, includeNumber, includeSymbol, length);
 });
 
 
 function generatePassword(lower, upper, number, symbol, length) {
-  let generatedPassword = '';
+  let createdPass = '';
   const typesCount = lower + upper + number + symbol;
   const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0]);
 
@@ -62,11 +62,11 @@ function generatePassword(lower, upper, number, symbol, length) {
   for (let i = 0; i < length; i += typesCount) {
     typesArr.forEach(type => {
       const funcName = Object.keys(type)[0];
-      generatedPassword += randomFunc[funcName]();
+      createdPass += randomFunc[funcName]();
     });
   }
 
-  const finalPassword = generatedPassword.slice(0, length);
+  const finalPass = createdPass.slice(0, length);
 
-  return finalPassword;
+  return finalPass;
 }
